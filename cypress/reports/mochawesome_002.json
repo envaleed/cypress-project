@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-06T16:08:13.483Z",
+    "end": "2022-12-06T16:08:16.641Z",
+    "duration": 3158,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4cd99c80-5c0e-4bc4-a5a1-0850bc7c5d31",
+      "title": "",
+      "fullFile": "cypress/e2e/test/cart.cy.js",
+      "file": "cypress/e2e/test/cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "14df4612-5e08-462a-8f5f-741a08172710",
+          "title": "Activity 6",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add a single product to cart",
+              "fullTitle": "Activity 6 Add a single product to cart",
+              "timedOut": null,
+              "duration": 1806,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.navigateToCart();\ncy.get(_cart.default.cartNotification).should('have.text', 1);\ncy.get(_cart.default.cartQuantity).should('have.text', 1);\ncy.get(_cart.default.removeSauceLabBackPackBtn).should('be.visible');\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "de6ea6fe-1610-4431-92e9-c151dc3258d0",
+              "parentUUID": "14df4612-5e08-462a-8f5f-741a08172710",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove one item from cart",
+              "fullTitle": "Activity 6 Remove one item from cart",
+              "timedOut": null,
+              "duration": 1323,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.navigateToCart(); // Assert that there is 1 item in the cart then remove the item\n\ncy.get(_cart.default.cartQuantity).should('have.text', 1);\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs Backpack');\ncy.get(_cart.default.removeSauceLabBackPackBtn).click(); // Assert that the item was removed and the cart is empty\ncy.get(_cart.default.cartItemsName).should('not.exist');\ncy.get(_cart.default.removedCartItem).should('exist');",
+              "err": {},
+              "uuid": "e2049e40-8e58-4946-8e09-2c3a5106477a",
+              "parentUUID": "14df4612-5e08-462a-8f5f-741a08172710",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "de6ea6fe-1610-4431-92e9-c151dc3258d0",
+            "e2049e40-8e58-4946-8e09-2c3a5106477a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3129,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

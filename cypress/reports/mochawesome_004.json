@@ -1,0 +1,152 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-12-06T16:40:30.677Z",
+    "end": "2022-12-06T16:42:40.730Z",
+    "duration": 130053,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "533e11e2-d628-42f1-96f8-cc47981e6081",
+      "title": "",
+      "fullFile": "cypress/e2e/test/login.cy.js",
+      "file": "cypress/e2e/test/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f1fb9667-abb3-4292-8aad-bf8ca9a0bd03",
+          "title": "Data driven login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successful Login with a valid user",
+              "fullTitle": "Data driven login Successful Login with a valid user",
+              "timedOut": null,
+              "duration": 1684,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login(_login.default.validUser.username, _login.default.validUser.password);\ncy.get(_auth.default.itemNames).should('be.visible');\ncy.url().should('contain', _routes.default.product);",
+              "err": {},
+              "uuid": "8d69b192-65d8-49cd-b3f1-b034c962fcfe",
+              "parentUUID": "f1fb9667-abb3-4292-8aad-bf8ca9a0bd03",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed Login with a locked user",
+              "fullTitle": "Data driven login Failed Login with a locked user",
+              "timedOut": null,
+              "duration": 61421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login(_login.default.lockedOutUser.username, _login.default.lockedOutUser.password);\ncy.get(_auth.default.errorMessage).should('be.visible');\ncy.get(_auth.default.errorMessage).should('have.text', 'Epic sadface: Sorry, this user has been locked out.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h3.error`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h3.error`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/login.cy.js:22:30)",
+                "diff": null
+              },
+              "uuid": "58f7a621-c134-4b60-b0a7-a575dcb1e320",
+              "parentUUID": "f1fb9667-abb3-4292-8aad-bf8ca9a0bd03",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed Login with an invalid user",
+              "fullTitle": "Data driven login Failed Login with an invalid user",
+              "timedOut": null,
+              "duration": 66864,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login(_login.default.invalidUser.username, _login.default.invalidUser.password);\ncy.get(_auth.default.errorMessage).should('be.visible');\ncy.get(_auth.default.errorMessage).should('have.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h3.error`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h3.error`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/login.cy.js:31:30)",
+                "diff": null
+              },
+              "uuid": "cf62d87b-6197-42fb-a0f2-90ef6a3c9f0d",
+              "parentUUID": "f1fb9667-abb3-4292-8aad-bf8ca9a0bd03",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d69b192-65d8-49cd-b3f1-b034c962fcfe"
+          ],
+          "failures": [
+            "58f7a621-c134-4b60-b0a7-a575dcb1e320",
+            "cf62d87b-6197-42fb-a0f2-90ef6a3c9f0d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 129969,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
